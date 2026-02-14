@@ -37,11 +37,11 @@ echo "[+] Ensuring pip..."
 $PY -m ensurepip --default-pip >/dev/null 2>&1 || true
 
 # -----------------------------
-# Install deps (pip3 + break system packages)
+# Install deps (IDX fix)
 # -----------------------------
 echo "[+] Installing Python dependencies (this may take 1–2 minutes)..."
-pip3 install --user --upgrade pip --break-system-packages
-pip3 install --user fastapi uvicorn --break-system-packages
+$PY -m pip install --upgrade pip --break-system-packages
+$PY -m pip install fastapi uvicorn --break-system-packages
 
 # -----------------------------
 # Verify install
