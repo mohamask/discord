@@ -37,11 +37,11 @@ echo "[+] Ensuring pip..."
 $PY -m ensurepip --default-pip >/dev/null 2>&1 || true
 
 # -----------------------------
-# Install deps (pip3 version)
+# Install deps (pip3 + break system packages)
 # -----------------------------
 echo "[+] Installing Python dependencies (this may take 1–2 minutes)..."
-pip3 install --user --upgrade pip
-pip3 install --user fastapi uvicorn
+pip3 install --user --upgrade pip --break-system-packages
+pip3 install --user fastapi uvicorn --break-system-packages
 
 # -----------------------------
 # Verify install
